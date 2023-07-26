@@ -1,6 +1,4 @@
-logging
 numpy
-pickle
 pickle
 simpletransformers
 sklearn
