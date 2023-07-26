@@ -1,7 +1,7 @@
-numpy
-pickle
-simpletransformers
-sklearn
-streamlit
-string
-time
+numpy==1.25.1
+pickle==4.0
+simpletransformers==0.63.11
+sklearn==1.3.0
+streamlit==1.25.0
+string==3.3.3
+time==3.7
