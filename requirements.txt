@@ -2,6 +2,5 @@ numpy==1.25.1
 simpletransformers==0.63.11
 sklearn
 streamlit==0.75.0
-string
-time==3.7
+time
 pickle
