@@ -15,11 +15,14 @@ from simpletransformers.question_answering import QuestionAnsweringModel, Questi
 
 knowledge_base = open("knowledge_base.txt", "r").read().replace('\n', '')
 # Configure the model
-model_args = QuestionAnsweringArgs()
-
-QA_model = QuestionAnsweringModel(
-    "bert", "cahya/bert-base-indonesian-tydiqa", args=model_args, use_cuda=False
-)
+@st.cache
+def modelQA():
+    model_args = QuestionAnsweringArgs()
+    QA_model = QuestionAnsweringModel(
+        "bert", "cahya/bert-base-indonesian-tydiqa", args=model_args, use_cuda=False
+    )
+    return QA_model
+    
 def preprocess(chat):
     # konversi ke non kapital
     chat = chat.lower()
@@ -49,7 +52,7 @@ def bot_response(chat, pipeline, jp):
                 }
             ]
         ]
-        answers, probabilities = QA_model.predict(to_predict[0])
+        answers, probabilities = modelQA().predict(to_predict[0])
         answer_fix = ''
         for i in range(0,len(answers[0]['answer'])):
             if answers[0]['answer'][i] != '':
@@ -72,8 +75,10 @@ df = jp.get_dataframe()
 df['text_input_prep'] = df.text_input.apply(preprocess)
 
 # Load model QA Scikit
-pipeline = pickle.load(open("model_chatbot.pkl", 'rb'))
-
+@st.cache
+def pipeline():
+    pipeline_model = pickle.load(open("model_chatbot.pkl", 'rb'))
+    return pipeline_model
 
 st.title("ZeinBot: Tanya\" Santuy")
 
@@ -98,7 +103,7 @@ if prompt := st.chat_input("Mau tanya apa?"):
         message_placeholder = st.empty()
         full_response = ""
         chat = prompt
-        res, tag = bot_response(chat, pipeline, jp)
+        res, tag = bot_response(chat, pipeline(), jp)
         # assistant_response = random.choice(
         #     [
         #         "Hello there! How can I assist you today?",
