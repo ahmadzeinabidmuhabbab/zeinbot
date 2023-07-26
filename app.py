@@ -14,7 +14,12 @@ from sklearn.naive_bayes import MultinomialNB
 from simpletransformers.question_answering import QuestionAnsweringModel, QuestionAnsweringArgs
 
 knowledge_base = open("knowledge_base.txt", "r").read().replace('\n', '')
+# Configure the model
+model_args = QuestionAnsweringArgs()
 
+QA_model = QuestionAnsweringModel(
+    "bert", "cahya/bert-base-indonesian-tydiqa", args=model_args, use_cuda=False
+)
 def preprocess(chat):
     # konversi ke non kapital
     chat = chat.lower()
@@ -29,12 +34,7 @@ def bot_response(chat, pipeline, jp):
     max_prob = max(res[0])
     if max_prob < 0.4:
         # QA_model = pickle.load(open("QA_model.pkl", 'rb'))
-        # Configure the model
-        model_args = QuestionAnsweringArgs()
-
-        QA_model = QuestionAnsweringModel(
-            "bert", "cahya/bert-base-indonesian-tydiqa", args=model_args, use_cuda=False
-        )
+        
         # Make predictions with the model
         to_predict = [
             [
