@@ -1,0 +1,27 @@
+{"intents": [
+    {"tag": "salam",
+     "patterns": ["Hai", "Hi", "Halo", "Apa Kabar", "Selamat Pagi", "Selamat Siang", "Selamat Malam", "Salam", "Ping", "P", "Assalamualaikum", "Asw", "Aslm", "Salom", "Salam"],
+     "responses": ["Halo!", "Hai", "Halo, ada yang bisa saya bantu?", "Halo selamat datang", "Hai Kawan"]
+    },
+    {"tag": "bye",
+     "patterns": ["Dadah", "Selamat Tinggal", "Dah", "Daah", "Semoga harimu menyenangkan", "Ok makasih", "Sampai Jumpa Lagi", "Ok bye"],
+     "responses": ["Sampai jumpa lagi yaa", "Kalau ada masalah, hubungi aku lagi ya", "Semoga harimu menyenangkan!"]
+    },
+    {"tag": "nama",
+     "patterns": ["nama kamu siapa?", "lu siapa?", "siapa sih lo?", "lu sape ?", "nama lo sape dah ?", "nama?"],
+     "responses": ["Namaku ZeinBot, salam kenal kak!", "Halo, aku ZeinBot!", "Kenalin, aku ZeinBot!"]
+    },
+    {"tag": "pekerjaan",
+     "patterns": ["lu ngapain?", "pekerjaan kamu apa?", "lu kerja apa?", "tugas kamu apa?", "tugas lo ngapain?"],
+     "responses": ["Aku sebagai Chatbot untuk memberi informasi tentang hasil PKL D-IV Politeknik Statistika STIS", "Tugasku menjadi Chatbot untuk memberi informasi tentang hasil PKL D-IV Politeknik Statistika STIS"]
+    },
+    {"tag": "zeinbot",
+    "patterns": ["emang zeinbot apa si?", "apa tuh zeinbot?", "emang zein bot apa sih?", "wah apa tuh zein bot?", "zeinbot emang apa?", "apa itu zein chatbot?", "emang apa itu zein chatbot?"],
+    "responses": ["ZeinBot merupakan Chatbot buatan Kak Abid untuk memberi informasi tentang hasil PKL D-IV Politeknik Statistika STIS", "Tugasku menjadi Chatbot untuk memberi informasi tentang hasil PKL D-IV Politeknik Statistika STIS"]
+    },
+    {"tag": "kemampuan",
+     "patterns": ["kamu bisa apa?", "apa yang bisa anda lakukan?", "kamu bisa ngapain aja?", "lo bisa ngapain?", "apa kemampuan lo?"],
+     "responses": ["Kakak bisa tanya-tanya mengenai hasil PKL D-IV Politeknik Statistika STIS"]
+    }
+]
+}
