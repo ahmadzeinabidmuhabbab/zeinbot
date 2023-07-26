@@ -1,5 +1,5 @@
 numpy==1.25.1
 simpletransformers==0.63.11
 scikit-learn
-streamlit==1.4.0
+streamlit
 torch
