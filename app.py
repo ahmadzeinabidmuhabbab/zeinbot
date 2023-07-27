@@ -15,7 +15,7 @@ from simpletransformers.question_answering import QuestionAnsweringModel, Questi
 
 knowledge_base = open("knowledge_base.txt", "r").read().replace('\n', '')
 # Configure the model
-@st.cache
+@st.cache_resource
 def modelQA():
     model_args = QuestionAnsweringArgs()
     QA_model = QuestionAnsweringModel(
@@ -75,7 +75,7 @@ df = jp.get_dataframe()
 df['text_input_prep'] = df.text_input.apply(preprocess)
 
 # Load model QA Scikit
-@st.cache
+@st.cache_resource
 def pipeline():
     pipeline_model = pickle.load(open("model_chatbot.pkl", 'rb'))
     return pipeline_model
