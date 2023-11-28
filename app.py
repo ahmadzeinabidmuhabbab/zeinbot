@@ -35,7 +35,7 @@ def bot_response(chat, pipeline, jp):
     chat = preprocess(chat)
     res = pipeline.predict_proba([chat])
     max_prob = max(res[0])
-    if max_prob < 0.4:
+    if max_prob < 0.2:
         # QA_model = pickle.load(open("QA_model.pkl", 'rb'))
         
         # Make predictions with the model
